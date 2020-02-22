@@ -6,10 +6,13 @@ const MAX_RANDOM_ATTEMPT = 10;
 const ERROR_MSG = {
   error: "Error during api call"
 };
-
 const NO_BEERS_FOUND = {
   error: "No beers found"
 };
+const punkApi = axios.create({
+  baseURL: "https://api.punkapi.com/v2/"
+});
+
 
 const _formatName = name => {
   return name
@@ -21,10 +24,6 @@ const _formatName = name => {
 const _formatDate = date => {
   return moment(date).format("MM-YYYY");
 };
-
-const punkApi = axios.create({
-  baseURL: "https://api.punkapi.com/v2/"
-});
 
 const getRandomBeer = async () => {
   let attemptCounter = 0;

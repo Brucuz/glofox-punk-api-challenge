@@ -1,11 +1,11 @@
 import React from "react";
+import "./SearchBar.scss"
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Textbox } from "react-inputs-validation";
 import "react-inputs-validation/lib/react-inputs-validation.min.css";
 import { fetchBeers } from "../actions";
 import { connect } from "react-redux";
-import "./SearchBar.scss"
 
 const TEXT_REGEX = /^[0-9A-Za-z\s-]+$/;
 class SearchBar extends React.Component {
@@ -21,7 +21,7 @@ class SearchBar extends React.Component {
     };
   }
 
-  changeSearchParams(searchBy) {
+  _changeSearchParams(searchBy) {
     this.setState({
       searchBy,
       searchParams:
@@ -29,18 +29,19 @@ class SearchBar extends React.Component {
     });
   }
 
-  selectDate(date) {
+  _selectDate(date) {
     this.setState({
       searchParams: { brewed_before: date }
     });
   }
 
-  searchBeers(event) {
+  _searchBeers(event) {
     event.preventDefault();
     if(this.state.searchBy === 'date' || TEXT_REGEX.test(this.state.searchParams.beer_name)){
       this.props.fetchBeers(this.state.searchParams);
     }
   }
+  
   renderInputParam() {
     if (this.state.searchBy === "name") {
       return (
@@ -64,7 +65,7 @@ class SearchBar extends React.Component {
     return (
       <DatePicker
         selected={this.state.searchParams.brewed_before}
-        onChange={date => this.selectDate(date)}
+        onChange={date => this._selectDate(date)}
       />
     );
   }
@@ -79,7 +80,7 @@ class SearchBar extends React.Component {
             style={{ display: "block", opacity: 1 }}
             value={option.value}
             checked={this.state.searchBy === option.value}
-            onChange={() => this.changeSearchParams(option.value)}
+            onChange={() => this._changeSearchParams(option.value)}
           />
           <label className="form-check-label">{option.label}</label>
         </div>
@@ -90,7 +91,7 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div className="SearchBar">
-        <form className="row" onSubmit={event => this.searchBeers(event)}>
+        <form className="row" onSubmit={event => this._searchBeers(event)}>
           <div className="form-group col-sm-3 col-xs-12">
             {this.renderInputParam()}
           </div>
