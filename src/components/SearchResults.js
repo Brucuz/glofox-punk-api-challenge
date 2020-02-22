@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import "./SearchResults.scss";
+import fallbackBeer from "../assets/images/fallback-beer.png";
 
 class SearchResults extends React.Component {
   renderList() {
@@ -9,7 +10,7 @@ class SearchResults extends React.Component {
         return (
           <div className="SearchResults-entry row">
             <div className="SearchResults-image col-sm-2 col-xs-12">
-              <img alt={beer.name} src={beer.image_url}></img>
+              <img alt={beer.name} src={beer.image_url ? beer.image_url : fallbackBeer}></img>
             </div>
             <div className="SearchResults-description col-sm-10 col-xs-12">
               <h4>{beer.name}</h4>
