@@ -1,3 +1,17 @@
 .SearchResults{
-    
+    &-entry{
+        border-bottom: 1px solid lightgray;
+    }
+    &-image{
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img{
+            height: 150px;
+        }
+    }
+    &-description{
+        padding: 15px;
+    }
 }

@@ -30,7 +30,7 @@ const getRandomBeer = async () => {
   let attemptCounter = 0;
   while (attemptCounter < MAX_RANDOM_ATTEMPT) {
     try {
-      const randomBeer = (await punkApi.get("beers/random/")).data[0];
+      const randomBeer = (await punkApi.get("beers/random")).data[0];
       if (
         !_.isEmpty(randomBeer.image_url) &&
         !_.isEmpty(randomBeer.description)
@@ -46,7 +46,7 @@ const getRandomBeer = async () => {
 
 const getRandomAlcoholFreeBeer = async () => {
   try {
-    const alcoholFreeBeers = await punkApi.get("beers/", {
+    const alcoholFreeBeers = await punkApi.get("beers", {
       params: {
         abv_lt: 0.51
       }
@@ -69,7 +69,7 @@ const getBeers = async params => {
     params.brewed_before = _formatDate(params.brewed_before);
   }
   try {
-    const beers = await punkApi.get("beers/", {
+    const beers = await punkApi.get("beers", {
       params
     });
     return beers.data.length > 0 ? beers.data : NO_BEERS_FOUND;

@@ -1,3 +1,48 @@
-.SearchBar{
-   
+.SearchBar {
+  padding-top: 20px;
+  &-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button {
+      width: 80%;
+    }
+  }
+  .search-by {
+    display: flex;
+    .form-check {
+      margin: 0 15px;
+    }
+  }
+  .react-inputs-validation__msg_identifier {
+    position: absolute;
+    top: calc(100% - 20px);
+  }
+  input[type="text"].react-inputs-validation__textbox__input___20hDL {
+    margin-bottom: 20px;
+  }
+  .react-datepicker-wrapper {
+    input {
+      border: 1px solid #e5e5e5;
+    }
+  }
+  @media (max-width: 576px) {
+    &-button {
+      padding: 20px 0;
+      button{
+          width: 76%;
+      }
+    }
+    input[type="text"].react-inputs-validation__textbox__input___20hDL {
+      width: 80%;
+      left: 10%;
+      position: relative;
+    }
+    .react-inputs-validation__msg_identifier {
+      left: 12%;
+    }
+    .search-by {
+      justify-content: center;
+    }
+  }
 }

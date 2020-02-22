@@ -5,8 +5,9 @@ import { Textbox } from "react-inputs-validation";
 import "react-inputs-validation/lib/react-inputs-validation.min.css";
 import { fetchBeers } from "../actions";
 import { connect } from "react-redux";
+import "./SearchBar.scss"
 
-const TEXT_REGEX = /^[0-9A-Za-z\s\-]+$/;
+const TEXT_REGEX = /^[0-9A-Za-z\s-]+$/;
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
@@ -90,13 +91,13 @@ class SearchBar extends React.Component {
     return (
       <div className="SearchBar">
         <form className="row" onSubmit={event => this.searchBeers(event)}>
-          <div className="form-group col-md-3 col-xs-12">
+          <div className="form-group col-sm-3 col-xs-12">
             {this.renderInputParam()}
           </div>
-          <div className="col-md-6 col-xs-12">{this.renderSearchOptions()}</div>
-          <div className="form-group col-md-3 col-xs-12">
+          <div className="search-by col-sm-6 col-xs-12">{this.renderSearchOptions()}</div>
+          <div className="SearchBar-button form-group col-sm-3 col-xs-12">
             <button type="submit" className="btn btn-primary">
-              Submit
+              Search
             </button>
           </div>
         </form>
