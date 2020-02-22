@@ -1,8 +1,8 @@
 import React from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { Textbox } from 'react-inputs-validation';
-import 'react-inputs-validation/lib/react-inputs-validation.min.css';
+import { Textbox } from "react-inputs-validation";
+import "react-inputs-validation/lib/react-inputs-validation.min.css";
 
 //import punkApi from "../service/punk.service";
 class SearchBar extends React.Component {
@@ -33,20 +33,25 @@ class SearchBar extends React.Component {
 
   async searchBeers(event) {
     event.preventDefault();
+    console.log(this.state);
     //console.log(await punkApi.getBeers(this.state.searchParams));
   }
   renderInputParam() {
     if (this.state.searchBy === "name") {
       return (
         <Textbox
-          className="form-control"
           attributesInput={{
             type: "text",
             placeholder: "Search for some beers!"
           }}
           value={this.state.searchParams.name}
-          onChange={(name) => {
+          onChange={(name, e) => {
             this.setState({ searchParams: { name } });
+          }}
+          onBlur={e => {}}
+          validationOption={{
+            reg: /^[0-9A-Za-z\s\-]+$/,
+            regMsg: "Use only letters, numbers, hyphens and spaces."
           }}
         />
       );
@@ -66,6 +71,7 @@ class SearchBar extends React.Component {
           <input
             className="form-check-input"
             type="radio"
+            style={{ display: "block", opacity: 1 }}
             value={option.value}
             checked={this.state.searchBy === option.value}
             onChange={() => this.changeSearchParams(option.value)}
