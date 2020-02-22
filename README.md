@@ -1,9 +1,10 @@
+# :beers: Punk API code challenge :beers:
+
 This project was bootstrapped with [Create React App]
 
-In order tu launch it, just clone the repository, enter the repo folder and install the dependencies:
-```yarn install```
-and start the dev server
-```yarn start```
+In order tu launch it, just clone the repository, enter the repo folder and install the dependencies with
+```yarn install```.
+Once it's done with the dependencies  start the dev server with ```yarn start```
 
 ## Considerations
 
