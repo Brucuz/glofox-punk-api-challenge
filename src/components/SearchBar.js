@@ -13,7 +13,7 @@ class SearchBar extends React.Component {
     super(props);
     this.searchOptions = [
       { value: "name", label: "Name" },
-      { value: "brewed_before", label: "Brewed before" }
+      { value: "brewed_before", label: "By brewed before" }
     ];
     this.state = {
       searchBy: "name",

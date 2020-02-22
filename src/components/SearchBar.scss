@@ -6,6 +6,8 @@
     justify-content: center;
     button {
       width: 80%;
+      top: -10px;
+      position: relative;
     }
   }
   .search-by {
@@ -31,6 +33,7 @@
       padding: 20px 0;
       button{
           width: 76%;
+          top: 0;
       }
     }
     input[type="text"].react-inputs-validation__textbox__input___20hDL {
