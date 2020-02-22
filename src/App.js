@@ -4,6 +4,7 @@ import 'typeface-roboto';
 import Container from '@material-ui/core/Container';
 import HighlightedContent from "./components/HighlightedContent";
 import SearchBar from "./components/SearchBar";
+import SearchResults from "./components/SearchResults";
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
         <h2>Search</h2>
         <SearchBar />
         <h2>Search results</h2>
+        <SearchResults />
       </Container>
     );
   }
