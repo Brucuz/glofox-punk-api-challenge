@@ -3,8 +3,10 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Textbox } from "react-inputs-validation";
 import "react-inputs-validation/lib/react-inputs-validation.min.css";
+import { fetchBeers } from "../actions";
+import { connect } from "react-redux";
 
-//import punkApi from "../service/punk.service";
+const TEXT_REGEX = /^[0-9A-Za-z\s\-]+$/;
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
@@ -22,19 +24,21 @@ class SearchBar extends React.Component {
     this.setState({
       searchBy,
       searchParams:
-        searchBy === "name" ? { name: "" } : { brewed_before: new Date() }
+        searchBy === "name" ? { beer_name: "" } : { brewed_before: new Date() }
     });
   }
+
   selectDate(date) {
     this.setState({
       searchParams: { brewed_before: date }
     });
   }
 
-  async searchBeers(event) {
+  searchBeers(event) {
     event.preventDefault();
-    console.log(this.state);
-    //console.log(await punkApi.getBeers(this.state.searchParams));
+    if(this.state.searchBy === 'date' || TEXT_REGEX.test(this.state.searchParams.beer_name)){
+      this.props.fetchBeers(this.state.searchParams);
+    }
   }
   renderInputParam() {
     if (this.state.searchBy === "name") {
@@ -44,13 +48,13 @@ class SearchBar extends React.Component {
             type: "text",
             placeholder: "Search for some beers!"
           }}
-          value={this.state.searchParams.name}
+          value={this.state.searchParams.beer_name}
           onChange={(name, e) => {
-            this.setState({ searchParams: { name } });
+            this.setState({ searchParams: { beer_name:name } });
           }}
           onBlur={e => {}}
           validationOption={{
-            reg: /^[0-9A-Za-z\s\-]+$/,
+            reg: TEXT_REGEX,
             regMsg: "Use only letters, numbers, hyphens and spaces."
           }}
         />
@@ -101,4 +105,7 @@ class SearchBar extends React.Component {
   }
 }
 
-export default SearchBar;
+
+export default connect(null, { fetchBeers })(
+  SearchBar
+);

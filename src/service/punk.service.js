@@ -1,5 +1,6 @@
 import axios from "axios";
 import _ from "lodash";
+import moment from "moment";
 
 const MAX_RANDOM_ATTEMPT = 10;
 const ERROR_MSG = {
@@ -8,6 +9,17 @@ const ERROR_MSG = {
 
 const NO_BEERS_FOUND = {
   error: "No beers found"
+};
+
+const _formatName = name => {
+  return name
+    .toLowerCase()
+    .trim()
+    .replace(/ +/g, "_");
+};
+
+const _formatDate = date => {
+  return moment(date).format("MM-YYYY");
 };
 
 const punkApi = axios.create({
@@ -51,6 +63,11 @@ const getRandomAlcoholFreeBeer = async () => {
 };
 
 const getBeers = async params => {
+  if (params.beer_name) {
+    params.beer_name = _formatName(params.beer_name);
+  } else {
+    params.brewed_before = _formatDate(params.brewed_before);
+  }
   try {
     const beers = await punkApi.get("beers/", {
       params
