@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="SearchResults"
+>
+  <div
+    className="SearchResults-entry row"
+  >
+    <div
+      className="SearchResults-image col-sm-2 col-xs-12"
+    >
+      <img
+        alt="Sunk Punk"
+        src="https://images.punkapi.com/v2/63.png"
+      />
+    </div>
+    <div
+      className="SearchResults-description col-sm-10 col-xs-12"
+    >
+      <h4>
+        Sunk Punk
+      </h4>
+      <p>
+        It's rumoured just a drop can calm the fiercest of storms. A balance of sweet, salt and savoury, citrus, spruce and caramel. Fermented at the bottom of the North Sea, which just so happens to be the perfect temperature for lagers to ferment.
+      </p>
+    </div>
+  </div>
+</div>
+`;

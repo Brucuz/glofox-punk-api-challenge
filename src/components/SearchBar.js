@@ -97,7 +97,7 @@ class SearchBar extends React.Component {
           </div>
           <div className="search-by col-sm-6 col-xs-12">{this.renderSearchOptions()}</div>
           <div className="SearchBar-button form-group col-sm-3 col-xs-12">
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-primary" id="search-button">
               Search
             </button>
           </div>

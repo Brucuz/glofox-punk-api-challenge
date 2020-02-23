@@ -37,6 +37,7 @@ class HighlightedContent extends React.Component {
         <div className="HighlightedContent-buttons col-sm-3 col-xs-12">
           <button
             type="button"
+            id="random-beer-button"
             className="btn btn-primary"
             onClick={() => this.loadRandomBeer(true)}
           >
@@ -44,6 +45,7 @@ class HighlightedContent extends React.Component {
           </button>
           <button
             type="button"
+            id="alcohol-free-button"
             className="btn btn-primary"
             onClick={() => this.loadRandomBeer(false)}
           >

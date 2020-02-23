@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="AppContainer"
+>
+  <h1>
+    Punk API Challenge!
+  </h1>
+  <div
+    className="HighlightedContent row"
+  >
+    <div
+      className="HighlightedContent-image col-sm-3 col-xs-12"
+    >
+      <h3 />
+      <img />
+    </div>
+    <div
+      className="HighlightedContent-description col-sm-6 col-xs-12"
+    >
+      <p />
+    </div>
+    <div
+      className="HighlightedContent-buttons col-sm-3 col-xs-12"
+    >
+      <button
+        className="btn btn-primary"
+        id="random-beer-button"
+        onClick={[Function]}
+        type="button"
+      >
+        Another beer please!
+      </button>
+      <button
+        className="btn btn-primary"
+        id="alcohol-free-button"
+        onClick={[Function]}
+        type="button"
+      >
+        Another alcohol free please!
+      </button>
+    </div>
+  </div>
+  <div
+    className="SearchBar"
+  >
+    <form
+      className="row"
+      onSubmit={[Function]}
+    >
+      <div
+        className="form-group col-sm-3 col-xs-12"
+      >
+        <div
+          className=" react-inputs-validation__textbox__wrapper___3tnXv false false false"
+          style={Object {}}
+        >
+          <div
+            className=" undefined false false false"
+            style={Object {}}
+          >
+            <input
+              className=" react-inputs-validation__textbox__input___20hDL false false false"
+              disabled={false}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyUp={[Function]}
+              placeholder="Search for some beers!"
+              style={Object {}}
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="search-by col-sm-6 col-xs-12"
+      >
+        <div
+          className="form-check"
+        >
+          <input
+            checked={true}
+            className="form-check-input"
+            onChange={[Function]}
+            style={
+              Object {
+                "display": "block",
+                "opacity": 1,
+              }
+            }
+            type="radio"
+            value="name"
+          />
+          <label
+            className="form-check-label"
+          >
+            Name
+          </label>
+        </div>
+        <div
+          className="form-check"
+        >
+          <input
+            checked={false}
+            className="form-check-input"
+            onChange={[Function]}
+            style={
+              Object {
+                "display": "block",
+                "opacity": 1,
+              }
+            }
+            type="radio"
+            value="brewed_before"
+          />
+          <label
+            className="form-check-label"
+          >
+            By brewed before
+          </label>
+        </div>
+      </div>
+      <div
+        className="SearchBar-button form-group col-sm-3 col-xs-12"
+      >
+        <button
+          className="btn btn-primary"
+          id="search-button"
+          type="submit"
+        >
+          Search
+        </button>
+      </div>
+    </form>
+  </div>
+  <div
+    className="SearchResults"
+  >
+    <div>
+      No beers to show
+    </div>
+  </div>
+</div>
+`;

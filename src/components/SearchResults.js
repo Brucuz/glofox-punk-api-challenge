@@ -8,7 +8,7 @@ class SearchResults extends React.Component {
     if (this.props.beerList.length > 0) {
       return this.props.beerList.map(beer => {
         return (
-          <div className="SearchResults-entry row">
+          <div className="SearchResults-entry row" key={beer.id}>
             <div className="SearchResults-image col-sm-2 col-xs-12">
               <img alt={beer.name} src={beer.image_url ? beer.image_url : fallbackBeer}></img>
             </div>

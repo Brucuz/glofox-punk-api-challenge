@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="HighlightedContent row"
+>
+  <div
+    className="HighlightedContent-image col-sm-3 col-xs-12"
+  >
+    <h3 />
+    <img />
+  </div>
+  <div
+    className="HighlightedContent-description col-sm-6 col-xs-12"
+  >
+    <p />
+  </div>
+  <div
+    className="HighlightedContent-buttons col-sm-3 col-xs-12"
+  >
+    <button
+      className="btn btn-primary"
+      id="random-beer-button"
+      onClick={[Function]}
+      type="button"
+    >
+      Another beer please!
+    </button>
+    <button
+      className="btn btn-primary"
+      id="alcohol-free-button"
+      onClick={[Function]}
+      type="button"
+    >
+      Another alcohol free please!
+    </button>
+  </div>
+</div>
+`;
