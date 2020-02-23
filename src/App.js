@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.scss';
 import 'typeface-roboto';
-import HighlightedContent from "./components/HighlightedContent";
-import SearchBar from "./components/SearchBar";
-import SearchResults from "./components/SearchResults";
+import HighlightedContent from "./components/HighlightedContent/HighlightedContent";
+import SearchBar from "./components/SearchBar/SearchBar";
+import SearchResults from "./components/SearchResults/SearchResults";
 
 class App extends Component {
   render() {

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import "./SearchResults.scss";
-import fallbackBeer from "../assets/images/fallback-beer.png";
+import fallbackBeer from "../../assets/images/fallback-beer.png";
 
 class SearchResults extends React.Component {
   renderList() {

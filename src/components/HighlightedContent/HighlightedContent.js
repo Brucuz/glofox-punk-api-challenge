@@ -1,6 +1,6 @@
 import React from "react";
 import "./HighlightedContent.scss";
-import punkApi from "../service/punk.service";
+import punkApi from "../../service/punk.service";
 
 class HighlightedContent extends React.Component {
   constructor(props) {

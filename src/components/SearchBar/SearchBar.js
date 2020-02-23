@@ -4,7 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Textbox } from "react-inputs-validation";
 import "react-inputs-validation/lib/react-inputs-validation.min.css";
-import { fetchBeers } from "../actions";
+import { fetchBeers } from "../../actions";
 import { connect } from "react-redux";
 
 const TEXT_REGEX = /^[0-9A-Za-z\s-]+$/;
